@@ -41,7 +41,10 @@ public class StockServiceImpl implements StockService{
         }
     }
 
-    public void checkAndLock() {
+    /**
+     * add synchronized keyword to solve the problem.
+     */
+    public synchronized void checkAndLock() {
 
         Stock leftAmount = this.stockMapper.selectById(1L);
 
@@ -50,4 +53,5 @@ public class StockServiceImpl implements StockService{
             this.stockMapper.updateById(leftAmount);
         }
     }
+
 }
