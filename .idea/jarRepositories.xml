@@ -21,5 +21,15 @@
       <option name="name" value="Central Repository" />
       <option name="url" value="https://maven.aliyun.com/repository/public" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus-snapshots" />
+      <option name="name" value="nexus-snapshots" />
+      <option name="url" value="http://nexus.lenovo.com/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus-releases" />
+      <option name="name" value="nexus-releases" />
+      <option name="url" value="http://nexus.lenovo.com/content/groups/public" />
+    </remote-repository>
   </component>
 </project>
