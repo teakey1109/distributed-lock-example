@@ -1,5 +1,7 @@
 package com.example.distributed.lock.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
@@ -12,11 +14,19 @@ import lombok.Data;
  * @Version 1.0
  */
 @Data
+@TableName("db_stock")
 public class Stock {
+
+    @TableId
+    private Long id;
+
+    private String productCode;
+
+    private String stockCode;
 
     /**
      * This is 5000 stock.
      */
-    private Integer stock = 5000;
+    private Integer count = 5000;
 
 }

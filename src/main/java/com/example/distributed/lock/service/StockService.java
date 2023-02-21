@@ -17,4 +17,11 @@ public interface StockService {
      * date: 21/2/2023
      */
     void deduct();
+
+    /**
+     * this method means that we want to checkAndLock stock
+     * @author zhanfang
+     * date: 21/2/2023
+     */
+    void checkAndLock();
 }

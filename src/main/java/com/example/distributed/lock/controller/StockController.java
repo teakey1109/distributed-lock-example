@@ -1,6 +1,8 @@
 package com.example.distributed.lock.controller;
 
 import com.example.distributed.lock.service.StockService;
+import com.example.distributed.lock.service.StockServiceImpl;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,14 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version 1.0
  */
 @RestController
+@MapperScan("com.example.distributed.lock.mapper")
 public class StockController {
 
     @Autowired
-    private StockService stockService;
+    private StockServiceImpl stockService;
 
     @GetMapping("stock/deduct")
     public String deduct() {
         this.stockService.deduct();
         return "hello stock deduct!!";
     }
+
+    @GetMapping("check/lock")
+    public String checkAndLock() {
+        this.stockService.checkAndLock();
+        return "check and lock stock success!";
+    }
+
 }
